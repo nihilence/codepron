@@ -1,0 +1,2 @@
+PronTest::Application.config.secret_key_base = '1f9db74f78d57bc567e22675fea66cc4cc539e17cc9d1c9f35b99b3a27bb26c56cba55b9496fe5617bd0c0f9a31bf5dd6743673a55cdf9cd87f3dfe3201964d3
+'
