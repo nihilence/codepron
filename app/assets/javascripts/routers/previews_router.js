@@ -10,7 +10,7 @@ PronTest.Routers.Previews = Backbone.Router.extend({
 
   previewShow: function (id){
     var preview = PronTest.previews.getOrFetch(id);
-    var showView = new PronTest.Views.PreviewShow({model: preview});
+    var showView = new PronTest.Views.PreviewForm({model: preview});
     this._swapView(showView);
   },
 

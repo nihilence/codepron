@@ -3,6 +3,7 @@ window.PronTest = {
   Collections: {},
   Views: {},
   Routers: {},
+  Utils:{},
   initialize: function() {
     PronTest.previews = new PronTest.Collections.Previews();
     PronTest.previews.fetch();

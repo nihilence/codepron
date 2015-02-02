@@ -11,6 +11,14 @@ module Api
       render json: @previews
     end
 
+    def update
+      @preview = Preview.find(params[:id])
+      puts params
+      if @board.update(preview_params[:preview][:html_input])
+        render :show
+      end
+    end
+
 
 
     private
