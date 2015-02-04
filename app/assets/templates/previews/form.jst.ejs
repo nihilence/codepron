@@ -1,7 +1,17 @@
-<label>HTML</label>
-<form class="form">
-  <div class="form-group">
-
-    <textarea class="form-control"><%= preview.get('html_input')%></textarea>
-  </div>
+<form class="form clearfix">
+     <div class="code">
+        <label>HTML</label>
+          <textarea id="html"><%= preview.get('html')%></textarea>
+    </div>
+     <div class="code">
+       <label>CSS</label>
+       <textarea id="css">
+        <%= preview.get('css')%></textarea>
+     </div>
+      <div class="code">
+         <label>Javascript</label>
+         <textarea id="js"><%= preview.get('js')%></textarea>
+      </div>
 </form>
+<iframe class="iframe" src="/htmldocs/<%=preview.escape('id')%>" overflow="scroll">
+</iframe>

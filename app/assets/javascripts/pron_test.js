@@ -8,6 +8,7 @@ window.PronTest = {
     PronTest.previews = new PronTest.Collections.Previews();
     PronTest.previews.fetch();
     new PronTest.Routers.Previews({"$rootEl": $("#main")});
+    
     Backbone.history.start();
   }
 };

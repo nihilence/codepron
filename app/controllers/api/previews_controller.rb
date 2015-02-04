@@ -13,10 +13,17 @@ module Api
 
     def update
       @preview = Preview.find(params[:id])
-      puts params
-      if @board.update(preview_params[:preview][:html_input])
-        render :show
+      @preview.build_html(params[:preview][:html], params[:preview][:css],
+                          params[:preview][:js])
+      if @preview.update(preview_params)
+        render json: @preview
+      else
+        render json: @preview.errors.full_messages
       end
+    end
+
+    def create
+
     end
 
 
@@ -24,7 +31,7 @@ module Api
     private
 
     def preview_params
-      params.require(:preview).permit(:title, :html_input)
+      params.require(:preview).permit(:title, :html, :description, :css, :js)
     end
 
 

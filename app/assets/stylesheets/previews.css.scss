@@ -2,13 +2,103 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .iframe{
   width:100%;
   height: 400px;
+  background: #000;
+}
+.form{
+  border-radius:5px;
+}
+.clearfix{
+  overflow: auto;
 }
 
-.form-control{
-  width: 250px;
-  min-height: 250px;
-  margin: 15px 0;
+label{
+  display: block;
+  padding: 5px;
+  border-radius:2px;
+  border-top: thick black solid;
+  height:30px;
+  background: #cb60b3; /* Old browsers */
+  background: -moz-linear-gradient(top,  #cb60b3 0%, #ad1283 50%, #de47ac 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cb60b3), color-stop(50%,#ad1283), color-stop(100%,#de47ac)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=0 ); /* IE6-9 */
+
+}
+
+textarea{
+  margin: 0 auto;
+  height:200px;
+  width:425px;
+  font-weight: bold;
+  font-size: 14px;
+  background: inherit;
+}
+#html{
+  color:lightblue;
+}
+
+#css{
+  color: purple;
+}
+
+#js{
+  color: orange;
+}
+.code{
+  float:left;
+}
+
+body{
+  background: #000;
+  color: white;
+}
+
+.submit {
+  position: absolute;
+  background: #cb60b3; /* Old browsers */
+  background: -moz-linear-gradient(top,  #cb60b3 0%, #ad1283 50%, #de47ac 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cb60b3), color-stop(50%,#ad1283), color-stop(100%,#de47ac)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #cb60b3 0%,#ad1283 50%,#de47ac 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#de47ac',GradientType=0 ); /* IE6-9 */
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #ee1eb5;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:arial;
+  font-size:15px;
+  left: center;
+  top:3%;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #c70067;
+}
+.submit:hover {
+  background: #ff7cd8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ff7cd8 0%, #fd89d7 49%, #fba6e1 50%, #fcecfc 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff7cd8), color-stop(49%,#fd89d7), color-stop(50%,#fba6e1), color-stop(100%,#fcecfc)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ff7cd8 0%,#fd89d7 49%,#fba6e1 50%,#fcecfc 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ff7cd8 0%,#fd89d7 49%,#fba6e1 50%,#fcecfc 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ff7cd8 0%,#fd89d7 49%,#fba6e1 50%,#fcecfc 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ff7cd8 0%,#fd89d7 49%,#fba6e1 50%,#fcecfc 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7cd8', endColorstr='#fcecfc',GradientType=0 ); /* IE6-9 */
+
+  color: black;
+}
+.submit:active {
+  position:relative;
+  top:1px;
 }

@@ -6,4 +6,6 @@ PronTest::Application.routes.draw do
     resources :previews, only: [:new, :create, :show, :index, :update]
   end
 
+  resources :htmldocs, only: :show
+
 end

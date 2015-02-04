@@ -1,2 +1,4 @@
 json.title @preview.title
-json.html_input @preview.html_input
+json.html @preview.html
+json.css @preview.css
+json.js @preview.js

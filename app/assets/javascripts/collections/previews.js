@@ -15,7 +15,7 @@ PronTest.Collections.Previews = Backbone.Collection.extend({
         }
       });
     }
-    
+
     return model;
   }
 })

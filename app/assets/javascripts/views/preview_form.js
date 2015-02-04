@@ -2,19 +2,19 @@ PronTest.Views.PreviewForm = Backbone.CompositeView.extend({
   template: JST['previews/form'],
 
   events:{
-    "keydown textarea":"sendForm"
+    "keypress": "saveModel",
+    "click .submit": "saveModel"
   },
 
   initialize: function(){
-    this.collection = this.subviews;
     this.listenTo(this.model, "sync", this.render);
 
   },
 
   render: function(){
-    this.renderPreview();
-    var renderedContent = this.template({preview: this.model});
-    this.$el.html(renderedContent);
+    var that = this;
+    var htmlCase = $('<div></div>');
+    this.$el.html(this.template({preview: this.model}));
 
     return this;
   },
@@ -24,19 +24,23 @@ PronTest.Views.PreviewForm = Backbone.CompositeView.extend({
       this.addSubview('.iframe', preview);
   },
 
-  sendForm: function(event){
-    if(event.keyCode === 13){
-      this.model.save({html_input: this.$('textarea').val()})
+  saveModel: function(event){
+    if(event.type === 'click' || event.keyCode === 13 ){
+      event.preventDefault();
+      var form = this;
+      form.model.save({
+        css:$('#css').val(),
+        html:$('#html').val(),
+        js:$('#js').val()
+      },
+    {
+      success: function(model){
+        PronTest.previews.add(model, {merge: true})
+        PronTest.previews.fetch()
+      }
+    })
     }
-    this.$('textarea').focus();
-
-  },
-
-  create: function (event) {
-    event.preventDefault();
-    console.log(this.model);
-    this.$('textarea').val('');
-    this.$('textarea').focus();
+;
   }
 
 });

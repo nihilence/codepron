@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'backbone-on-rails'
 gem 'bcrypt'
 gem 'bootstrap-sass'
@@ -12,7 +13,8 @@ gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
-gem 'turbolinks'
+gem 'nokogiri'
+gem 'codemirror-rails'
 
 group :doc do
   gem 'sdoc', require: false
