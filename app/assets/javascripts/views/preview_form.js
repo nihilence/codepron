@@ -37,6 +37,10 @@ CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
       success: function(model){
         CodePron.previews.add(model, {merge: true})
         CodePron.previews.fetch()
+      },
+
+      error: function(model){
+        console.log(model);
       }
     })
     };

@@ -7,8 +7,8 @@ window.CodePron = {
   initialize: function() {
     CodePron.previews = new CodePron.Collections.Previews();
     CodePron.previews.fetch();
-    new CodePron.Routers.Previews({"$rootEl": $("#main")});
-    
+    new CodePron.Routers.Previews({$rootEl: $("#main")});
+
     Backbone.history.start();
   }
 };
