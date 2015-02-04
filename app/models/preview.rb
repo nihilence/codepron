@@ -1,7 +1,7 @@
 require 'nokogiri'
 class Preview < ActiveRecord::Base
 
-  
+
 
   def build_html(html,css_input,js_input)
 
@@ -26,13 +26,6 @@ class Preview < ActiveRecord::Base
     dat = Nokogiri::XML::Node.new "script", merged;
     dat['src'] ="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
     head.add_child(dat);
-    #
-    # d3 = Nokogiri::XML::Node.new "script", merged;
-    # d3['src'] = 'http://d3js.org/d3.v3.min.js';
-    # d3['charset'] = 'utf-8'
-    # head.add_child(d3);
-
-
 
     css = Nokogiri::XML::Node.new "style", merged;
     head.add_child(css);

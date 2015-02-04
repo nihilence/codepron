@@ -8,7 +8,7 @@ CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.listenTo(this.model, "sync", this.render);
-
+    this.renderPreview();
   },
 
   render: function(){
@@ -39,9 +39,7 @@ CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
         CodePron.previews.fetch()
       },
 
-      error: function(model){
-        console.log(model);
-      }
+
     })
     };
 

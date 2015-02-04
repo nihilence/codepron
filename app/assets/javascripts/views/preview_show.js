@@ -1,37 +1,17 @@
 CodePron.Views.PreviewShow = Backbone.View.extend({
   template: JST['previews/previewShow'],
-
-  iframeCon: function(region){
-    return $('.iframe').contents().find(region);
-  },
-
+  tagName: 'iframe',
   initialize: function(){
-    this.listenTo(this.model, "sync", this.render);
-  },
-
-  setCss: function(){
-    var content = this.model.get('css');
-    this.iframeCon('head').empty();
-    this.iframeCon('head').append('<style>'+content+'</style>');
-    return this;
+    this.listenTo(this.model, "change", this.render);
   },
 
 
   render: function(){
-    this.iframeCon('body').html(this.template({preview: this.model}));
-    this.setCss();
-    this.setJs();
+    var content = this.template({preview: this.model})
+    this.$el.html(content);
+    this.delegateEvents();
     return this;
-  },
-
-  renderForm: function(){
-    var formView = new CodePron.Views.PreviewForm({model: this.model});
-    return this;
-  },
-
-  setJs: function(){
-    var content = this.model.get('js');
-    $('#main').append('<script>'+ content + '</script>')
   }
+
 
 });
