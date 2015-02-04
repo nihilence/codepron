@@ -1,6 +1,8 @@
 require 'nokogiri'
 class Preview < ActiveRecord::Base
 
+  
+
   def build_html(html,css_input,js_input)
 
     merged = Nokogiri::HTML(html);

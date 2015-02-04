@@ -5,6 +5,7 @@ CodePron.Routers.Previews = Backbone.Router.extend({
   },
 
   routes: {
+    '':'index',
     'previews/:id':'previewShow'
   },
 

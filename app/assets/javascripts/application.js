@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//= require pron_test
+//= require codepron
 //= require codemirror
 //= require codemirror/modes/xml
 //= require codemirror/modes/htmlmixed
