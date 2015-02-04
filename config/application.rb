@@ -4,10 +4,11 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+config.assets.initialize_on_precompile = false
+
 Bundler.require(*Rails.groups)
 
 module CodePron
   class Application < Rails::Application
-    config.assets.initialize_on_precompile = false
   end
 end
