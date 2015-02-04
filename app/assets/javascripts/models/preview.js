@@ -1,3 +1,3 @@
-PronTest.Models.Preview = Backbone.Model.extend({
+CodePron.Models.Preview = Backbone.Model.extend({
   urlRoot:'/api/previews'
 })

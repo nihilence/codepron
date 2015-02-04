@@ -1,4 +1,4 @@
-PronTest.Collections.Previews = Backbone.Collection.extend({
+CodePron.Collections.Previews = Backbone.Collection.extend({
   url: 'api/previews',
 
   getOrFetch: function(id){
@@ -8,7 +8,7 @@ PronTest.Collections.Previews = Backbone.Collection.extend({
     if(model){
       model.fetch();
     } else {
-      model = new PronTest.Models.Preview({id:id});
+      model = new CodePron.Models.Preview({id:id});
       model.fetch({
         success: function(){
           previews.add(model);

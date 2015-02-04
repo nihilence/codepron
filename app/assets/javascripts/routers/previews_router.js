@@ -1,4 +1,4 @@
-PronTest.Routers.Previews = Backbone.Router.extend({
+CodePron.Routers.Previews = Backbone.Router.extend({
 
   initialize: function(options){
     this.$rootEl = options.$rootEl;
@@ -9,8 +9,8 @@ PronTest.Routers.Previews = Backbone.Router.extend({
   },
 
   previewShow: function (id){
-    var preview = PronTest.previews.getOrFetch(id);
-    var showView = new PronTest.Views.PreviewForm({model: preview});
+    var preview = CodePron.previews.getOrFetch(id);
+    var showView = new CodePron.Views.PreviewForm({model: preview});
     this._swapView(showView);
   },
 

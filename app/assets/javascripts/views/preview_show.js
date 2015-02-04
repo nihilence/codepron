@@ -1,4 +1,4 @@
-PronTest.Views.PreviewShow = Backbone.View.extend({
+CodePron.Views.PreviewShow = Backbone.View.extend({
   template: JST['previews/previewShow'],
 
   iframeCon: function(region){
@@ -25,7 +25,7 @@ PronTest.Views.PreviewShow = Backbone.View.extend({
   },
 
   renderForm: function(){
-    var formView = new PronTest.Views.PreviewForm({model: this.model});
+    var formView = new CodePron.Views.PreviewForm({model: this.model});
     return this;
   },
 

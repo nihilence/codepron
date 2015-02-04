@@ -1,4 +1,4 @@
-PronTest.Views.PreviewForm = Backbone.CompositeView.extend({
+CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
   template: JST['previews/form'],
 
   events:{
@@ -20,12 +20,12 @@ PronTest.Views.PreviewForm = Backbone.CompositeView.extend({
   },
 
   renderPreview: function(){
-      var preview = new PronTest.Views.PreviewShow({model: this.model})
+      var preview = new CodePron.Views.PreviewShow({model: this.model})
       this.addSubview('.iframe', preview);
   },
 
-  saveModel: function(event){
-    if(event.type === 'click' || event.keyCode === 13 ){
+  saveModel: function(event, ui){
+    if(event.type === 'click' || event.keyCode === 92 ){
       event.preventDefault();
       var form = this;
       form.model.save({
@@ -35,12 +35,12 @@ PronTest.Views.PreviewForm = Backbone.CompositeView.extend({
       },
     {
       success: function(model){
-        PronTest.previews.add(model, {merge: true})
-        PronTest.previews.fetch()
+        CodePron.previews.add(model, {merge: true})
+        CodePron.previews.fetch()
       }
     })
-    }
-;
+    };
+
   }
 
 });

@@ -21,6 +21,9 @@ class Preview < ActiveRecord::Base
     jq['src'] = 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js';
     head.add_child(jq);
 
+    dat = Nokogiri::XML::Node.new "script", merged;
+    dat['src'] ="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+    head.add_child(dat);
     #
     # d3 = Nokogiri::XML::Node.new "script", merged;
     # d3['src'] = 'http://d3js.org/d3.v3.min.js';

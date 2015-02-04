@@ -1,4 +1,4 @@
-PronTest::Application.routes.draw do
+CodePron::Application.routes.draw do
 
   root to: 'static_pages#root'
 
