@@ -10,9 +10,9 @@ CodeProN is a clone of CodePen built on Rails and Backbone. Users can:
 - [ ] Create accounts
 - [ ] Create sessions (log in)
 - [ ] Create previews
-- [ ] Preview HTML/CSS/JS in real time
+- [X] Preview HTML/CSS/JS in real time
 - [ ] View index of previews
-- [ ] View individual previews
+- [X] View individual previews
 - [ ] Users can follow each other
 - [ ] Users can comment on previews
 
