@@ -14,12 +14,8 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
     _(this.collection.each(function(preview){
         var content = that.template({preview: preview});
         that.$el.append(content);
-        console.log(content);
     }))
-      // var content = that.template({preview: preview})
-      // $('.index-frame').$el.append(content);
 
-    // })
       return this;
     },
 

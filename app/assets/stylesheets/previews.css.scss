@@ -33,7 +33,7 @@ label{
 
 textarea{
   display:inline block;
-  width:425px;
+  width:300px;
   height:200px;
   font-weight: bold;
   font-size: 14px;
@@ -62,12 +62,8 @@ textarea{
 body{
   background: #000;
   color: white;
-  scrolling: no;
 }
-.form{
-  margin: 0 2px;
 
-}
 
 .submit {
   position: absolute;
@@ -125,15 +121,40 @@ body{
   margin: 10px;
   border: 0px;
   display: inline block;
-  scrolling: no;
-  position: absoute;
+  overflow: hidden;
 }
 .index-container{
   margin: 50px;
   position: relative;
 }
 
-.navbar.navbar-inverse{
-  display:block;
-  color: white;
+.navbar-custom {
+  background-color:#229922;
+  color:#ffffff;
+  border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+  color:#fff;
+  padding-left:20px;
+  padding-right:20px;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #33aa33;
+}
+
+.navbar-custom .navbar-brand {
+  color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+  background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+  background-color:#33aa33;
 }

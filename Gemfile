@@ -15,6 +15,7 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'nokogiri'
 gem 'codemirror-rails'
+gem 'autoprefixer-rails'
 
 group :doc do
   gem 'sdoc', require: false

@@ -162,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  autoprefixer-rails
   backbone-on-rails
   bcrypt
   better_errors
