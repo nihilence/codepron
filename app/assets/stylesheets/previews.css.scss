@@ -104,11 +104,30 @@ body{
   position:relative;
   top:1px;
 }
+#iframes{
+  margin-left:10%;
+}
 .iframe.small{
+  position: relative;
   float: left;
   margin: 10px;
   height: 150px;
   width: 300px;
   overflow: hidden;
-  border: none;
+
+}
+
+.iframe.small:nth-child(3n){
+  margin-right: 50px;
+}
+.bars{
+  display: block;
+  position: absolute;
+  color: white;
+  bottom: 0px;
+  background: black;
+  width: 290px;
+  height: 20px;
+  left: 10px;
+  border: thin white solid;
 }
