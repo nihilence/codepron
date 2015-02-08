@@ -1,16 +1,20 @@
+
 class SessionsController < ApplicationController
 
   def create;
     @user = User.find_by_credentials(params[:session][:username], params[:session][:password])
-    puts @user
     if @user
       login(@user)
-      render json: @user
+      redirect_to ''
     else
-      flash[:errors] = "Invaid credentials"
-      # redirect_to 'session/new'
-      render json: "errror"
+      flash.now[:errors] = "Invaid credentials"
+      redirect_to 'session/new'
     end
+  end
+
+  def destroy
+    sign_out!
+    redirect_to ''
   end
 
   private

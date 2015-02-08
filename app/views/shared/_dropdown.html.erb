@@ -1,0 +1,12 @@
+<ul class="header-list group">
+  <li><button class="sign-up" id="profile" ><%= current_user.username %></button>
+    <ul class="user-options">
+      <li><a href="#">New Project</a></li>
+      <li><a href="#">New Post</a></li>
+      <li><a href="#">Embed Builder</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li><%= button_to "Logout", session_url, method: :delete %></li>
+    </ul>
+  </li>
+</ul>
