@@ -2367,7 +2367,7 @@ div {
 }
 EOF
 
-Preview.create(title:"Blackhole Sphere", html:"<div class="bg"></div>",
+Preview.create(title:"Blackhole Sphere", html:"<div class='bg'></div>",
   css: css_text, js: js_text)
 
 
