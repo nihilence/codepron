@@ -2095,7 +2095,8 @@ void main( void ) {
                                           'Orh+/XXQAexHS5wBpxnV2PNqjqlG/Vo1o9ff6fcmREo0YplLEcvhCYU0lg7uOBdfwdeXRKluF/AY'+
                                           'itEfPOkPkHXQAezny5yCqw6bynDxL58/3FSsxdRwFxndPWjsB/Y66AAeJGthF+Jgoe7gwvr/ZXkB'+
                                           'tghVDbwAAAAASUVORK5CYII=';
-                                        EOF
+  EOF
+
   Preview.create(title:"Cellular", html: html_text, js: js_text, css:"body{
   margin: 0;
   overflow: hidden;
@@ -2201,3 +2202,442 @@ body {
 #frame {
 position: absolute;
 }")
+
+
+js_text = <<-EOF
+var pos = {
+  w: $('html').outerWidth(),
+  h: $('html').outerHeight(),
+  cx: $('html').outerWidth() /2,
+  cy: $('html').outerHeight()/2
+}
+var canvas = document.getElementById('canvas');
+$(canvas).attr('width',pos.w);
+$(canvas).attr('height',pos.h);
+
+var ctx = canvas.getContext("2d");
+var offset_inc = 1;
+var offset = 1 ;
+var
+hW = pos.w / 2,
+hH = pos.h / 2;
+var rotate_inc =0;
+function render(){
+  ctx.restore();
+  ctx.fillStyle = 'rgba(0,0,0,0.03)';
+  ctx.fillRect(0,0,pos.w,pos.h);
+
+  ctx.save();
+  ctx.translate(hW,hH);
+  ctx.rotate(rotate_inc+=0.01);
+  ctx.translate(-hW,-hH);
+
+
+  if(offset<=5)  { offset=5; offset_inc=0.5; }
+    if(offset>=50)  { offset=49; offset_inc=-0.5; }
+      offset =  offset + (offset/(offset_inc>0? 50 : 5))*offset_inc;
+
+      for(var i=0; i<360;i+=10) {
+        for(var rad=50; rad<hW;rad+=offset*2) {
+          ctx.fillStyle = 'hsla('+(i/hW)*180+',100%,50%,1)';
+          ctx.fillRect(
+          (Math.sin(i)*rad + pos.cx),
+          (Math.cos(i)*rad + pos.cy),
+          2,
+          2);
+        }
+      }
+
+      setTimeout(render,20);
+
+    }
+    render();
+EOF
+
+css_text = <<-EOF
+html {
+  width:100%;
+  height:100%;
+  body {
+    background-color:#000;
+    width:100%;
+    height:100%;
+    canvas {
+      background-color:#000;
+      bottom:0;
+      left:0;
+      right:0;
+      top:0;
+      position:absolute;
+    }
+  }
+}
+EOF
+
+Preview.create(title: twirly, html:"<canvas id='canvas'></canvas>",
+  css: css_text, js: js_text)
+
+
+js_text = <<-EOF
+var C = document.createElement('canvas');
+var c = C.getContext('2d');
+
+C.width = 200; C.height = 200;
+document.body.appendChild(C);
+
+var particles = [];
+for(var i = 3000; i--; particles.push([
+  Math.random() * Math.PI * 1,
+  Math.random() * Math.PI * 1,
+  [
+    Math.random() * 256 | 0,
+    Math.random() * 256 | 0,
+    Math.random() * 256 | 0
+  ]
+  ]));
+
+  (function render() {
+    c.setTransform(1, 0, 0, 1, 0, 0);
+    c.scale(C.width/2, C.height/2);
+    c.translate(1, 1);
+
+    c.globalCompositeOperation = 'source-over';
+    c.fillStyle = 'rgba(0, 0, 0, .5)';
+    c.fillRect(-12, -2, 20, 4);
+
+    var x, y, z, w, t, p, r = .7, f = 1;
+    c.globalCompositeOperation = 'lighter';
+
+    for(var i = 0; p = particles[i++];) {
+      t = Date.now() / 8000 * (i%1 ? 1 : -1);
+      x = r * Math.sin(p[0] + t) * Math.cos(p[1] + t);
+      y = r * Math.cos(p[0] + t);
+      z = r * Math.sin(p[0] + t) * Math.sin(p[1] + t);
+      w = f / (f - z);
+      c.beginPath(); c.arc(x*w, y*w, w/100, 0, 2*Math.PI);
+      c.fillStyle = 'rgba(' + p[2] + ', ' + w/4 + ')';
+      c.fill();
+    }
+
+    requestAnimationFrame(render);
+    })();
+EOF
+
+css_text = <<-EOF
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  display: table;
+  border-spacing: 0;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: transparent;
+}
+
+canvas{
+  transform:rotate(45deg);
+  border-radius:50%;
+  box-shadow:20px 2px  40px #111;
+}
+
+.bg {
+  background: radial-gradient(circle, #000 40%, DeepPink  100%);
+}
+
+div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+EOF
+
+Preview.create(title:"Blackhole Sphere", html:"<div class="bg"></div>",
+  css: css_text, js: js_text)
+
+
+html_text = <<-EOF
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"> </script>
+  <div class="centered">
+  <svg width="300px" height="94px" viewBox="0 0 300 94" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMinYMin meet">
+  <clipPath id="logoPath">
+  <circle id="O-1" cx="93" cy="47" r="47"></circle>
+  <circle id="O-2" cx="253" cy="47" r="47"></circle>
+  <path d="M5.85352353e-15,93 L45,93 L45,83.3467344 L8.95275853,1 L5.85352353e-15,1.00000004 L5.85352353e-15,93 Z"
+  id="L"></path>
+  <path d="M146,93 L201,93 L201,64.0857143 L187.904762,43.0571429 C187.904762,43.0571429 190.492121,37.8636081 191.7858,35.2668407 C193.111168,32.6064652 195.761905,27.2857143 195.761905,27.2857143 L195.761905,1 L146,1 L146,93 Z"
+  id="B"></path>
+  </clipPath>
+  <image id="svg-image" clip-path="url(#logoPath)" width="1337px" height="94px" xlink:href="http://kollectiv.org/files/strip.jpg"></image>
+  </svg>
+  <h1>COMING SOON</h1>
+  </div>
+EOF
+
+css_text = <<-EOF
+  @import url(http://fonts.googleapis.com/css?family=Roboto:100);
+  html {
+    height: 100%;
+  }
+
+  body {
+    background-color: #111;
+    color: #f14949;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+    height: 100%;
+  }
+
+  .centered {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+EOF
+
+js_text = <<-EOF
+function animate(type) {
+  Snap.select('#svg-image').animate({x: (type == 'reverse' ? 0 : -1037)}, 12000, function () {
+    setTimeout(function () {
+      animate(type == 'reverse' ? '' : 'reverse');
+      }, 1000);
+      });
+    }
+    animate();
+EOF
+
+Preview.create(title:"Nifty Logo", js: js_text, css: css_text, html: html_text)
+
+html_text = <<-EOF
+  <div class='wrap'>
+  <div class='cube'>
+  <canvas class='side'></canvas>
+  <canvas class='side'></canvas>
+  <canvas class='side'></canvas>
+  <canvas class='side'></canvas>
+  <canvas class='side'></canvas>
+  <canvas class='side'></canvas>
+  </div>
+  </div>
+EOF
+
+css_text = <<-EOF
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, .wrap {
+    height: 100%;
+  }
+
+  body {
+    background: black;
+    overflow: hidden;
+  }
+
+  .wrap {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+  }
+
+  .cube {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
+    -webkit-animation: rotate 18s infinite linear;
+    animation: rotate 18s infinite linear;
+  }
+
+  .side {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    opacity: .8;
+    border: 1px solid #111;
+    cursor: none;
+  }
+
+  .side:nth-child(1) {
+    -webkit-transform: rotateX(90deg) translateZ(150px);
+    transform: rotateX(90deg) translateZ(150px);
+  }
+
+  .side:nth-child(2) {
+    -webkit-transform: translateZ(150px);
+    transform: translateZ(150px);
+  }
+
+  .side:nth-child(3) {
+    -webkit-transform: rotateY(180deg) translateZ(150px);
+    transform: rotateY(180deg) translateZ(150px);
+  }
+
+  .side:nth-child(4) {
+    -webkit-transform: rotateY(90deg) translateZ(150px);
+    transform: rotateY(90deg) translateZ(150px);
+  }
+
+  .side:nth-child(5) {
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
+    transform: rotateY(-90deg) translateZ(150px);
+  }
+
+  .side:nth-child(6) {
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
+    transform: rotateX(-90deg) translateZ(150px);
+  }
+
+  @-webkit-keyframes rotate {
+    100% {
+      -webkit-transform: rotateX(360deg) rotateY(360deg);
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      -webkit-transform: rotateX(360deg) rotateY(360deg);
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+EOF
+
+js_text = <<-EOF
+window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+var canvases = document.querySelectorAll(".side");
+var sides = canvases.length;
+var size = 300;
+var particles = [];
+var particleIndex = 0;
+var maxParticles = 100;
+var hue = 0;
+var mouseX, mouseY;
+
+function Particle(ctx){
+  this.ctx = ctx;
+  this.size = this.random(10);
+  this.x = mouseX || size / 2 - this.size / 2;
+  this.y = mouseY || size / 2 - this.size / 2;
+  this.color = "hsla(" + hue + ", 100%, 50%, .8)";
+  this.maxLife = this.random(40);
+  this.life = 0;
+  this.vx = this.random(-3, 3);
+  this.vy = this.random(-3, 3);
+  this.index = particleIndex;
+  particles[particleIndex] = this;
+  particleIndex++;
+}
+
+Particle.prototype = {
+
+  constructor: Particle,
+
+  draw: function(){
+    var ctx = this.ctx;
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.size, this.size);
+    this.update();
+  },
+
+  update: function(){
+    if (this.life >= this.maxLife) {
+      particles[this.index].reset();
+    }
+    this.x += this.vx;
+    this.y += this.vy;
+    this.life++;
+  },
+
+  reset: function(){
+    this.size = this.random(10);
+    this.x = mouseX || size / 2 - this.size / 2;
+    this.y = mouseY || size / 2 - this.size / 2;
+    this.color = "hsla(" + hue + ", 100%, 50%, .8)";
+    this.life = 0;
+    this.vx = this.random(-3, 3);
+    this.vy = this.random(-3, 3);
+  },
+
+  random: function(){
+    var min = arguments.length == 1 ? 0 : arguments[0];
+    var max = arguments.length == 1 ? arguments[0] : arguments[1];
+    return Math.random() * (max - min) + min;
+  }
+
+  };
+
+
+  function setup(){
+    for(var i = 0; i < sides; i++) {
+      var canvas = canvases[i];
+      canvas.width = size;
+      canvas.height = size;
+      var ctx = canvas.getContext("2d");
+      for(var x = 0; x < maxParticles; x++) {
+        particles.push(new Particle(ctx));
+      }
+
+      canvas.addEventListener("mousemove", function(e) {
+        mouseX = e.offsetX;
+        mouseY = e.offsetY;
+        });
+
+        canvas.addEventListener("mouseleave", function(e) {
+          mouseX = null;
+          mouseY = null;
+          });
+
+        }
+      }
+
+      function animate(){
+        for(var i = 0; i < sides; i++) {
+          var canvas = canvases[i]
+          var ctx = canvas.getContext("2d");
+          ctx.fillStyle = "rgba(0,0,0,.1)";
+          ctx.fillRect(0, 0, size, size);
+        }
+
+        for(var i in particles) {
+          particles[i].draw();
+        }
+
+        hue += .3;
+        window.requestAnimationFrame(animate);
+      }
+
+      setup();
+      animate();
+EOF
+
+Preview.create(title:"Cube Form", css: css_text, js: js_text, html: html_text)
