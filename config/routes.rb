@@ -4,11 +4,10 @@ CodePron::Application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :previews, only: [:create, :show, :index, :update]
-    resources :users, only: :show
   end
 
   resources :htmldocs, only: :show
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resource :session, only:[:create, :destroy, :new]
 
 end

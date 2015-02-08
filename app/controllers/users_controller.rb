@@ -1,4 +1,4 @@
-class UsersController < ApiController
+class UsersController < ApplicationController
 
 
   def create
@@ -9,6 +9,11 @@ class UsersController < ApiController
     else
       render json: @user.errors.full_messages
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render json: @user
   end
 
 
