@@ -184,5 +184,6 @@ Preview.create(title:"Feisty Pins",
    margin: 0;
    overflow: hidden;
   }
-  div{position:absolute;}EOF
+  div{position:absolute;}
+ EOF
 )
