@@ -189,7 +189,7 @@ body{
   position:relative;
 }
 #iframes{
-  margin-left:10%;
+  margin-left:8%;
   margin-top: 50px;
 }
 .iframe.small{
@@ -197,12 +197,12 @@ body{
   float: left;
   margin: 10px;
   height: 150px;
-  width: 300px;
+  width: 350px;
   overflow: hidden;
 }
 
 .iframe.small:nth-child(3n){
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .bars{
   display: block;
@@ -210,9 +210,9 @@ body{
   color: cyan;
   bottom: 0px;
   background: black;
-  width: 290px;
+  width: 340px;
   height: 20px;
-  left: 4%;
+  left: 3%;
   border: thin gray solid;
   padding-top:5px;
 }
