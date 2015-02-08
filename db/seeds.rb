@@ -457,7 +457,7 @@ html_text = <<-EOF
   <p></p><script src="http://files.martijnbrekelmans.com/cdn/drawingCollection.js"></script><script src="http://files.martijnbrekelmans.com/cdn/noise.js"></script>
 EOF
 
-Preview.create(title:"Sunspire", html:html_text)
+Preview.create(title:"Sunspire", html:html_text, js: js_text)
 
 
 html_text = <<-EOF
@@ -2096,7 +2096,6 @@ void main( void ) {
                                           'itEfPOkPkHXQAezny5yCqw6bynDxL58/3FSsxdRwFxndPWjsB/Y66AAeJGthF+Jgoe7gwvr/ZXkB'+
                                           'tghVDbwAAAAASUVORK5CYII=';
                                         EOF
-
   Preview.create(title:"Cellular", html: html_text, js: js_text, css:"body{
   margin: 0;
   overflow: hidden;
