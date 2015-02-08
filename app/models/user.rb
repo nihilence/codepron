@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
-  validate :username, :password, presense: true
+  validate :username, presence: true
+  validate :password, length: {minimum: 6}
 
   def self.generate_session_token
     SecureRandom.urlsafe_base64(16)

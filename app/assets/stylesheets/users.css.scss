@@ -1,3 +1,37 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* SignIn/Up Forms */
+.users-form{
+  margin: 10% auto;
+  width:300px;
+  height: 200px;
+  border: thin solid white;
+  text-align: center;
+}
+
+.users-form h1{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],{
+  background: #CCC;
+  box-sizing:border-box;
+  color:#000;
+}
+
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+{
+  background: #CCC;
+  border: 2px  #cb60b3 solid;
+}
+
+textarea:focus{
+  border: 2px  #cb60b3 solid;
+}
