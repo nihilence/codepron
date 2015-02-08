@@ -1,14 +1,15 @@
 Preview.create(title:"Feisty Pins",
  html:'<div></div><script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>',
- css: 'body {
+ css: <<END body {
  color:white;
  font:16px calibri;
  background: -webkit-linear-gradient(#000,#222,white);
  margin: 0;
  overflow: hidden;
 }
-div{position:absolute;}',
-js:'var speed = 5; //speed of particle movement
+div{position:absolute;}END,
+
+js:<<END var speed = 5; //speed of particle movement
 var noofparticles = 15000; //number of particles
 var sizeofparticles = 40; //size of particle
 var speedcam = 10; //speed of camera movement..set to ZERO for NO CAMERA MOVEMENT
@@ -180,4 +181,4 @@ function init() {
                                     material.color.setHSL( h, 0.5, 0.5 );
 
                                     renderer.render( scene, camera );
-                                    }')
+                                    }END)
