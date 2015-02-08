@@ -15,7 +15,7 @@ CodePron.Routers.Previews = Backbone.Router.extend({
   },
   previewShow: function (id){
     var preview = CodePron.previews.getOrFetch(id);
-    var showView = new CodePron.Views.PreviewForm({model: preview});
+    var showView = new CodePron.Views.PreviewShow({model: preview});
     this._swapView(showView);
   },
 

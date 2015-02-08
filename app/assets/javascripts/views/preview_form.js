@@ -1,4 +1,4 @@
-CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
+CodePron.Views.PreviewForm = Backbone.View.extend({
   template: JST['previews/form'],
 
   events:{
@@ -8,20 +8,12 @@ CodePron.Views.PreviewForm = Backbone.CompositeView.extend({
 
   initialize: function(){
     this.listenTo(this.model, "sync", this.render);
-    this.renderPreview();
   },
 
   render: function(){
     var that = this;
-    var htmlCase = $('<div></div>');
     this.$el.html(this.template({preview: this.model}));
-
     return this;
-  },
-
-  renderPreview: function(){
-      var preview = new CodePron.Views.PreviewShow({model: this.model})
-      this.addSubview('.iframe', preview);
   },
 
   saveModel: function(event, ui){
