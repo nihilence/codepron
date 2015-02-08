@@ -9,7 +9,7 @@ Preview.create(title:"Feisty Pins",
 }
 div{position:absolute;}",
 
-js:q%@var speed = 5; //speed of particle movement
+js:Q%@var speed = 5; //speed of particle movement
 var noofparticles = 15000; //number of particles
 var sizeofparticles = 40; //size of particle
 var speedcam = 10; //speed of camera movement..set to ZERO for NO CAMERA MOVEMENT
