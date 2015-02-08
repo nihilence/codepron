@@ -1,13 +1,13 @@
 Preview.create(title:"Feisty Pins",
  html:'<div></div><script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>',
- css: q%!body {
+ css: "body {
  color:white;
  font:16px calibri;
  background: -webkit-linear-gradient(#000,#222,white);
  margin: 0;
  overflow: hidden;
 }
-div{position:absolute;}!,
+div{position:absolute;}",
 
 js:q%@var speed = 5; //speed of particle movement
 var noofparticles = 15000; //number of particles
