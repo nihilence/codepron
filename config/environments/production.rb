@@ -1,5 +1,4 @@
 CodePron::Application.configure do
-  mattr_accessor :dump_schema_after_migration
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
