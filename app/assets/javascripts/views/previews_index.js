@@ -5,29 +5,34 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
 
   },
 
+  events: {
+    "mouseover": "pop"
+  },
+
   render: function(){
-    // debugger;
+    var content = this.template();
+    this.$el.html(content);
+    this.renderIframes();
+    return this;
+  },
 
-    var that = this;
-    // console.log(CodePron.previews);
-    this.renderPreviews();
-    _(this.collection.each(function(preview){
-        var content = that.template({preview: preview});
-        that.$el.append(content);
-    }))
+  addIframe: function(iframe){
+    var view = new CodePron.Views.IndexItem({
+      model: iframe
+    });
+    this.addSubview('#iframes', view);
+    $('.iframe').addClass('small');
+  },
 
-      return this;
-    },
+  renderIframes: function(){
+    CodePron.previews.each(this.addIframe.bind(this));
+  },
 
-    renderPreviews: function(){
-      var that = this;
-      -(CodePron.previews).each(function(preview){
-        var subview = new CodePron.Views.PreviewShow({model:preview});
-        that.addSubview('.iframe', subview)
-        $('.index-frame').append(subview);
-      })
-      // console.log(CodePron.previews);
-    }
+  pop: function(){
+    var id = $(event.target).data('id')
+    console.log(id);
+  }
+
 
 
 });
