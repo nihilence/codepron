@@ -13,6 +13,7 @@
 
 
 label{
+  margin-top: 50px;
   display: block;
   padding: 5px;
   border-radius:2px;
@@ -106,6 +107,7 @@ body{
 }
 #iframes{
   margin-left:10%;
+  margin-top: 50px;
 }
 .iframe.small{
   position: relative;
@@ -130,4 +132,20 @@ body{
   height: 20px;
   left: 10px;
   border: thin gray solid;
+}
+
+.navbar-right, .navbar-left, .separator{
+  list-style: none;
+  background: white;
+  display: block;
+}
+.navbar-left{
+  float:left;
+}
+.navbar-right{
+  float: right;
+}
+.navbar-left>li, .navbar-right>li{
+  float:left;
+  margin: 20px;
 }

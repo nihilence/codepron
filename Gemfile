@@ -16,6 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'nokogiri'
 gem 'codemirror-rails'
 gem 'autoprefixer-rails'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false

@@ -3,7 +3,8 @@ CodePron::Application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do
-    resources :previews, only: [:new, :create, :show, :index, :update]
+    resources :previews, only: [:create, :show, :index, :update]
+    resources :users, only: :show
   end
 
   resources :htmldocs, only: :show
