@@ -9,7 +9,5 @@ Bundler.require(*Rails.groups)
 
 module CodePron
   class Application < Rails::Application
-    config.assets.initialize_on_precompile = false
-    config.active_record.dump_schema_after_migration = false
   end
 end
