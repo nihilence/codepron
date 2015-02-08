@@ -5,10 +5,6 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
 
   },
 
-  events: {
-    "mouseover": "pop"
-  },
-
   render: function(){
     var content = this.template();
     this.$el.html(content);
@@ -26,11 +22,6 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
 
   renderIframes: function(){
     CodePron.previews.each(this.addIframe.bind(this));
-  },
-
-  pop: function(){
-    var id = $(event.target).data('id')
-    console.log(id);
   }
 
 

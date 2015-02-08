@@ -6,6 +6,7 @@ CodePron.Routers.Previews = Backbone.Router.extend({
 
   routes: {
     '':'previewsIndex',
+    'previews/new': 'newPreview',
     'previews/:id':'previewShow'
   },
 
@@ -17,6 +18,15 @@ CodePron.Routers.Previews = Backbone.Router.extend({
     var preview = CodePron.previews.getOrFetch(id);
     var showView = new CodePron.Views.PreviewShow({model: preview});
     this._swapView(showView);
+  },
+
+  newPreview: function(){
+    var preview = new CodePron.Models.Preview();
+    preview.save({},{
+      success: function(preview){
+        Backbone.history.navigate('/previews/'+preview.get('id'), {trigger: true});
+      }
+    })
   },
 
   _swapView: function (view){

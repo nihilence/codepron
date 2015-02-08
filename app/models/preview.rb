@@ -3,7 +3,7 @@ class Preview < ActiveRecord::Base
 
 
 
-  def build_html(html,css_input,js_input)
+  def self.build_html(html,css_input,js_input)
 
     merged = Nokogiri::HTML(html);
     head   = merged.at_css "html > head";
@@ -37,8 +37,7 @@ class Preview < ActiveRecord::Base
     js.content = js_input;
 
 
-    self.combined = merged.to_html;
-    self.save!
+    return merged.to_html;
   end
 
 

@@ -13,7 +13,7 @@ module Api
 
     def update
       @preview = Preview.find(params[:id])
-      @preview.build_html(params[:preview][:html], params[:preview][:css],
+      @preview.combined = Preview.build_html(params[:preview][:html], params[:preview][:css],
                           params[:preview][:js])
       if @preview.update(preview_params)
         render json: @preview
@@ -23,7 +23,12 @@ module Api
     end
 
     def create
-
+      @preview = Preview.new(preview_params)
+      @preview.combined = Preview.build_html(params[:preview][:html], params[:preview][:css],
+      params[:preview][:js])
+      if @preview.save
+        render json: @preview
+      end
     end
 
 
