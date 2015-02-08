@@ -2274,7 +2274,7 @@ html {
 }
 EOF
 
-Preview.create(title: twirly, html:"<canvas id='canvas'></canvas>",
+Preview.create(title: "twirly", html:"<canvas id='canvas'></canvas>",
   css: css_text, js: js_text)
 
 
