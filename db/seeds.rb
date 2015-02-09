@@ -2645,3 +2645,25 @@ Particle.prototype = {
 EOF
 
 Preview.create(title:"Cube Form", css: css_text, js: js_text, html: html_text)
+
+Comment.create(body:"As one of only a handful enjoying a remarkable Rumanian reproduction of The Master and Margarita in our local art-house theatre I couldn't help but wonder what today's culturally degenerated youth were doing instead? Why are the cis-sexual backlash movement intent on opressing my right to fair-trade cocoa? That's what we learned from Toussaint L'Ouverture.", author_id:1,
+preview_id:4)
+Comment.create(body:"A touch of nutmeg really bolsters the egg flavours in an otherwise traditional Yorkshire pudding, which can really focus the mind on other issues. Would there be all this fuss about Assange if he was gay? Just another lie we bought from the Lib Dems.", author_id:1,
+preview_id:4)
+Comment.create(body:"I can't help but wonder what Edward Snowden would think about this. Of course I care about Syria but where was the outrage when refugees were fleeing Iraq? Stop the evil drone attacks in Pakistan before the machines turn on us!", author_id:1,
+preview_id:5)Comment.create(body:"", author_id:2,
+preview_id:4)Comment.create(body:"", author_id:2,
+preview_id:6)Comment.create(body:"", author_id:2,
+preview_id:9)Comment.create(body:"", author_id:1,
+preview_id:8)Comment.create(body:"", author_id:1,
+preview_id:7)Comment.create(body:"", author_id:1,
+preview_id:8)Comment.create(body:"", author_id:2,
+preview_id:9)Comment.create(body:"", author_id:2,
+preview_id:1)Comment.create(body:"", author_id:2,
+preview_id:1)Comment.create(body:"", author_id:1,
+preview_id:1)Comment.create(body:"", author_id:1,
+preview_id:3)Comment.create(body:"", author_id:1,
+preview_id:3)Comment.create(body:"", author_id:2,
+preview_id:5)Comment.create(body:"", author_id:2,
+preview_id:5)Comment.create(body:"", author_id:2,
+preview_id:3)
