@@ -2279,7 +2279,7 @@ html {
 EOF
 
 Preview.create(title: "twirly", html:"<canvas id='canvas'></canvas>",
-  css: css_text, js: js_text, author_id: id1)
+  css: css_text, js: js_text, author_id: 1)
 
 
 js_text = <<-EOF
@@ -2372,7 +2372,7 @@ div {
 EOF
 
 Preview.create(title:"Blackhole Sphere", html:"<div class='bg'></div>",
-  css: css_text, js: js_text)
+  css: css_text, js: js_text, author_id: 2)
 
 
 html_text = <<-EOF
@@ -2431,7 +2431,7 @@ function animate(type) {
     animate();
 EOF
 
-Preview.create(title:"Nifty Logo", js: js_text, css: css_text, html: html_text)
+Preview.create(title:"Nifty Logo", author_id: 1, js: js_text, css: css_text, html: html_text)
 
 html_text = <<-EOF
   <div class='wrap'>
@@ -2644,7 +2644,7 @@ Particle.prototype = {
       animate();
 EOF
 
-Preview.create(title:"Cube Form", css: css_text, js: js_text, html: html_text)
+Preview.create(title:"Cube Form", css: css_text, author_id:2, js: js_text, html: html_text)
 
 Comment.create(body:"As one of only a handful enjoying a remarkable Rumanian reproduction of The Master and Margarita in our local art-house theatre I couldn't help but wonder what today's culturally degenerated youth were doing instead? Why are the cis-sexual backlash movement intent on opressing my right to fair-trade cocoa? That's what we learned from Toussaint L'Ouverture.", author_id:1, preview_id:4)
 Comment.create(body:"A touch of nutmeg really bolsters the egg flavours in an otherwise traditional Yorkshire pudding, which can really focus the mind on other issues. Would there be all this fuss about Assange if he was gay? Just another lie we bought from the Lib Dems.", author_id:1,preview_id:4)
