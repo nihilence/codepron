@@ -4,10 +4,10 @@
 <div id="name-follows">
     <h1><%= user.get('email')%></h1>
     <ul>
-      <li><a href="#">Link1</a></li>
-      <li><a href="#">Link2</a></li>
-      <li><a href="#">Link3</a></li>
-      <li>## <a href="#">Followers</a>    ## <a href="#">Following</a>
+      <li><a href="#/users/<%= user.get('id')%>">Link1</a></li>
+      <li><a href="#/users/<%= user.get('id')%>">Link2</a></li>
+      <li><a href="#/users/<%= user.get('id')%>">Link3</a></li>
+      <li>## <a href="#/users/<%= user.get('id')%>">Followers</a>    ## <a href="#/users/<%= user.get('id')%>">Following</a>
       <button class="follow">Follow<button></li>
   </ul>
 </div>

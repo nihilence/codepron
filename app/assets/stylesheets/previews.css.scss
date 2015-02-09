@@ -16,7 +16,7 @@ span, article, footer, time, small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent;  
+  background: transparent;
 }
 
 ul{
@@ -190,7 +190,7 @@ body{
   position:relative;
 }
 #iframes{
-  margin-left:8%;
+  margin-left:6%;
   margin-top: 50px;
 }
 .iframe.small{
@@ -208,7 +208,8 @@ body{
 .bars{
   display: block;
   position: absolute;
-  color: cyan;
+  color:#76daff;
+  font-weight: bold;
   bottom: 0px;
   background: black;
   width: 340px;
