@@ -17,7 +17,6 @@ CodePron.Views.UserShow = Backbone.CompositeView.extend({
     var view = new CodePron.Views.UserInfo({
       model: this.model
     })
-
     this.addSubview('#info-tab', view)
   },
 

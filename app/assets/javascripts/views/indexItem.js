@@ -1,11 +1,13 @@
 CodePron.Views.IndexItem = Backbone.CompositeView.extend({
   template: JST['previews/indexItem'],
-  className: 'iframe small',
+  className: 'iframe small wrap',
 
   render: function(){
     var content = this.template({preview: this.model});
     this.$el.html(content);
-    var link = $('<a class="bars" href="#/previews/'+this.model.get('id')+'">'+this.model.get('title')+'</a>')
+    var id = this.model.get('id');
+    var author = this.model.author().get('email');
+    var link = $('<a class="bars" href="#/users/'+id+'">'+author+'</a>')
     this.$el.append(link)
     return this;
   },

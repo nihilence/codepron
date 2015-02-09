@@ -1,4 +1,2 @@
-json.title @preview.title
-json.html @preview.html
-json.css @preview.css
-json.js @preview.js
+json.extract! @preview, :id, :title, :html, :css, :js, :author_id
+json.author @preview.author, :id, :email

@@ -1,5 +1,5 @@
 CodePron.Views.IframeShow = Backbone.View.extend({
-  template: JST['previews/indexItem'],
+  template: JST['previews/iframeShow'],
   className: 'iframe',
 
   render: function(){
