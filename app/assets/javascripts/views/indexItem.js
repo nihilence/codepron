@@ -5,7 +5,7 @@ CodePron.Views.IndexItem = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template({preview: this.model});
     this.$el.html(content);
-    var id = this.model.get('id');
+    var id = this.model.get('author_id');
     var author = this.model.author().get('email');
     var link = $('<a class="bars" href="#/users/'+id+'">'+author+'</a>')
     this.$el.append(link)
