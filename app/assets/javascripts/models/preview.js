@@ -8,15 +8,14 @@ CodePron.Models.Preview = Backbone.Model.extend({
 
   author: function () {
     if (!this._author) {
-      this._author = CodePron.users.getOrFetch({id:this.get('author_id')});
+      this._author = CodePron.users.getOrFetch(this.get('author_id'));
     }
     return this._author;
   },
 
   parse: function (response) {
-
     if (response.author) {
-      this.author().set(response.author, { parse: true });
+      this.author().set(response.author);
       delete response.author;
     }
 

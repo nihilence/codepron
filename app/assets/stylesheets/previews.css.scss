@@ -281,7 +281,7 @@ body{
   height:100%;
   font-weight:normal;
   background:#000;
-  padding:5px;
+  padding-left:10px;
   position: absolute;
   z-index:2;
 }
@@ -290,7 +290,7 @@ body{
   color:#76daff;
 }
 
-.wrap:hover .meta-overlay{
+#iframes .wrap:hover .meta-overlay{
   display: block;
 }
 
@@ -298,8 +298,7 @@ body{
 
 .footer{
   width:100%;
-  position: relative;
-  top:-3px;
+  position: fixed;
   display: block;
   height:25px;
   background:#323232;

@@ -100,22 +100,36 @@ button{
 }
 
 #previews-tab{
+  height:400px;
   width:900px;
 }
 #previews-tab .iframe{
   width:250px;
   height:150px;
-  overflow: hidden;
   margin:5px 10px;
 }
 
-#previews-tab iframe{
-  width:100%;
-  height:100%;
+#previews-tab .iframe{
   position: relative;
-  top:-10px;
-  left:-10px;
+  top: -10px;
+  left: -12px;
 }
+
+#previews-tab .meta-overlay{
+  position:absolute;
+  z-index: 2;
+  width: 150px;
+  width: 250px;
+  display:none;
+  top: -2px;
+  left:-1%;
+  border: thin white solid;
+  text-align: left;
+  padding-left:10px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
 
 #previews-tab a{
   color: #76daff;

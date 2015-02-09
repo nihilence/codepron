@@ -7,7 +7,7 @@ CodePron::Application.routes.draw do
   end
 
   resources :htmldocs, only: :show
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index]
   resource :session, only:[:create, :destroy, :new]
 
 end

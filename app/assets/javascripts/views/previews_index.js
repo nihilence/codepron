@@ -17,7 +17,7 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
       model: iframe
     });
     this.addSubview('#iframes', view);
-    $('.iframe').addClass('small');
+    $('iframe').addClass('small');
   },
 
   renderIframes: function(){

@@ -1,4 +1,7 @@
 module Api
-  class PreviewsController < ApiController
+  class CommentsController < ApiController
+    def create
+
+    end
   end
 end

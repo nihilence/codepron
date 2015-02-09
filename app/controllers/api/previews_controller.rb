@@ -3,7 +3,7 @@ module Api
 
     def show
       @preview = Preview.find(params[:id])
-      render :show
+      render :show, include: :author
     end
 
     def index
