@@ -15,13 +15,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
+    render json: @user, include: :previews
   end
 
 
   private
 
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:email, :password)
     end
 end

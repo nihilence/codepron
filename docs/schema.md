@@ -16,7 +16,7 @@ combined    | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-username    | string    | not null, indexed, unique
+email    | string    | not null, indexed, unique
 pw_digest   | string    | not null
 sess_token  | string    | not null, unique
 

@@ -1,3 +1,7 @@
+user1 = User.create(email:"sample@mail.com", password:"password")
+user2 = User.create(email:"example@mail.com", password:"password")
+id1 = user1.id
+id2 = user2.id
 js_text = <<-EOF
 var speed = 5; //speed of particle movement
 var noofparticles = 15000; //number of particles
@@ -174,7 +178,7 @@ function init() {
                                   }
                                   EOF
 
-Preview.create(title:"Feisty Pins",
+Preview.create(title:"Feisty Pins", author_id: id1,
  html:'<div></div><script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>',
  js:js_text,
  css:<<-EOF
@@ -374,7 +378,7 @@ function Particle(c){
     c.canvas.addEventListener('mousemove', followMouse);
     c.canvas.addEventListener('mouseleave', forgetMouse);
   EOF
-Preview.create(title:"Follow the Mouse", html:"<div></div>", js: js_text)
+Preview.create(title:"Follow the Mouse", author_id:id2, html:"<div></div>", js: js_text)
 
 js_text = <<-EOF
 var draw = fullscreenCanvas();
@@ -457,7 +461,7 @@ html_text = <<-EOF
   <p></p><script src="http://files.martijnbrekelmans.com/cdn/drawingCollection.js"></script><script src="http://files.martijnbrekelmans.com/cdn/noise.js"></script>
 EOF
 
-Preview.create(title:"Sunspire", html:html_text, js: js_text)
+Preview.create(title:"Sunspire", author_id: id1, html:html_text, js: js_text)
 
 
 html_text = <<-EOF
@@ -2097,7 +2101,7 @@ void main( void ) {
                                           'tghVDbwAAAAASUVORK5CYII=';
   EOF
 
-  Preview.create(title:"Cellular", html: html_text, js: js_text, css:"body{
+  Preview.create(title:"Cellular", author_id: id2, html: html_text, js: js_text, css:"body{
   margin: 0;
   overflow: hidden;
 }
@@ -2188,7 +2192,7 @@ js_text = <<-EOF
     resize();
 EOF
 
-Preview.create(title:"Quick Shader", html: html_text, js: js_text, css:"* {
+Preview.create(title:"Quick Shader", author_id:id1, html: html_text, js: js_text, css:"* {
 margin:  0;
 padding: 0;
 }
@@ -2275,7 +2279,7 @@ html {
 EOF
 
 Preview.create(title: "twirly", html:"<canvas id='canvas'></canvas>",
-  css: css_text, js: js_text)
+  css: css_text, js: js_text, author_id: id1)
 
 
 js_text = <<-EOF

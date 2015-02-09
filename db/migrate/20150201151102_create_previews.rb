@@ -10,5 +10,7 @@ class CreatePreviews < ActiveRecord::Migration
       t.integer :author_id
       t.timestamps
     end
+
+    add_index :previews, :author_id
   end
 end

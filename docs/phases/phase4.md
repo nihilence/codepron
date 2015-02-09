@@ -16,5 +16,5 @@
 * CommentIndex composite with
 * CommentShow subviews and
 * CommentForm subview
-* footer with comment button and username in PreviewShow
+* footer with comment button and email in PreviewShow
 ## Gems/Libraries

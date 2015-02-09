@@ -21,7 +21,7 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
   },
 
   renderIframes: function(){
-    CodePron.previews.each(this.addIframe.bind(this));
+    this.collection.each(this.addIframe.bind(this));
   }
 
 

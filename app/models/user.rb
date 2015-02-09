@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_reader :password
+  has_many :previews, foreign_key: "author_id", class_name:"Preview"
+
   after_initialize :ensure_session_token
-  validate :username, presence: true
+  validate :email, presence: true
   validate :password, length: {minimum: 6}
 
   def self.generate_session_token
@@ -23,8 +25,8 @@ class User < ActiveRecord::Base
       BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     return nil if user.nil?
     if user.is_password?(password)
       return user

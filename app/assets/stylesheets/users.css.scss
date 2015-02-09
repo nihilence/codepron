@@ -35,3 +35,81 @@ input[type="text"]:focus,
 textarea:focus{
   border: 2px  #cb60b3 solid;
 }
+
+/* User Show Page */
+#display-img{
+  width:150px;
+  height:150px;
+  float: left;
+}
+
+#display-img img{
+  width:100%;
+  height: 100%;
+  margin:10px;
+  margin-top:20px;
+}
+#info-tab{
+  height:200px;
+  border-bottom: thin white solid;
+}
+#name-follows h1{
+  margin: 10px;
+  margin-left:20px;
+  font-size:36px;
+}
+
+#name-follows li{
+  margin: 10px;
+}
+
+#name-follows a:hover{
+  color:#cb60b3;
+}
+button{
+  cursor: pointer;
+}
+
+.follow {
+  background: #37db9f;
+  background-image: -webkit-linear-gradient(top, #37db9f, #4bcc2b);
+  background-image: -moz-linear-gradient(top, #37db9f, #4bcc2b);
+  background-image: -ms-linear-gradient(top, #37db9f, #4bcc2b);
+  background-image: -o-linear-gradient(top, #37db9f, #4bcc2b);
+  background-image: linear-gradient(to bottom, #37db9f, #4bcc2b);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 1px 1px 3px #666666;
+  color: #000;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.follow:hover {
+  background: #00fa3a;
+  text-decoration: none;
+}
+#previews-tab .iframe{
+  width:250px;
+  height:150px;
+  text-align: center;
+  overflow: hidden;
+  margin:10px;
+}
+
+#previews-tab iframe{
+  width:100%;
+  height:100%;
+}
+#previews-tab .iframe:nth-child(3n){
+  margin-right:150px;
+}
+
+#previews-tab a{
+  position: absolute;
+  width:235px;
+  left: 10px;
+  text-align: left;
+}

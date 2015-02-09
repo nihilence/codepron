@@ -1,5 +1,6 @@
 CodePron.Collections.Previews = Backbone.Collection.extend({
   url: 'api/previews',
+  model: CodePron.Models.Preview,
 
   getOrFetch: function(id){
     var model = this.get(id);

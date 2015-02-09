@@ -3,7 +3,7 @@
 ## Rails
 ### Models
 * Preview belongs to user
-* User(username, password_digest, session_token) has_many previews/comments
+* User(email, password_digest, session_token) has_many previews/comments
 ### Controllers
 * Users(new, create, show)
 * Sessions(new, create, destroy)

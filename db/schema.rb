@@ -28,12 +28,16 @@ ActiveRecord::Schema.define(version: 20150205010655) do
     t.datetime "updated_at"
   end
 
+  add_index "previews", ["author_id"], name: "index_previews_on_author_id", using: :btree
+
   create_table "users", force: true do |t|
-    t.string   "username",        null: false
+    t.string   "email",           null: false
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
