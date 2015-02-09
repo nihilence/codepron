@@ -193,21 +193,17 @@ body{
   margin-left:6%;
   margin-top: 50px;
 }
-.iframe{
+.iframe.small{
   position: relative;
   float: left;
   margin: 10px;
   height: 150px;
   width: 350px;
+  top:-8px;
+  left:-8px;
   overflow: hidden;
 }
 
-.iframe.small{
-  position:relative;
-  top:-8px;
-  left:-8px;
-  overflow:hidden;
-}
 .iframe.small:nth-child(3n){
   margin-right: 20px;
 }
