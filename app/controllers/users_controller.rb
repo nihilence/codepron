@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def create
     @user = User.new(user_params)
 
@@ -15,9 +14,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user, include: :previews
+    render json: @user
   end
 
+  def index
+    @users = User.all
+    render json: @users, include: :previews
+  end
 
   private
 

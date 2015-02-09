@@ -8,7 +8,7 @@ module Api
 
     def index
       @previews = Preview.all
-      render json: @previews, include: :author
+      render json: @previews
     end
 
     def update

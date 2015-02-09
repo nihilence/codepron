@@ -1,5 +1,5 @@
 CodePron.Models.User = Backbone.Model.extend({
-  urlRoot: 'users/',
+  urlRoot: '/users',
 
   previews: function () {
     if (!this._previews) {

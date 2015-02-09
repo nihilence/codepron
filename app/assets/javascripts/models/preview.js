@@ -6,20 +6,20 @@ CodePron.Models.Preview = Backbone.Model.extend({
     title: "A new project"
   },
 
-  author: function () {
-    if (!this._author) {
-      this._author = CodePron.users.getOrFetch({id:this.get('author_id')});
+  comments: function () {
+    if (!this._comments) {
+      this._comments = new CodePron.Collections.Comments([], {preview: this});
     }
-    return this._author;
+    return this._comments;
   },
 
   parse: function (response) {
-
-    if (response.author) {
-      this.author().set(response.author, { parse: true });
-      delete response.author;
+    if (response.comments) {
+      this.comments().set(response.comments, {parse: true});
+      delete response.comments;
     }
 
     return response;
-  }
+  },
+
 })
