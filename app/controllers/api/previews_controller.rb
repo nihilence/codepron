@@ -3,12 +3,12 @@ module Api
 
     def show
       @preview = Preview.find(params[:id])
-      render :show, include: :author
+      render :show
     end
 
     def index
       @previews = Preview.all
-      render json: @previews, include: :author
+      render json: @previews
     end
 
     def update

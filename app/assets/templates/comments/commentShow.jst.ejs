@@ -1,0 +1,21 @@
+
+<li class="group comment " id="<%= comment.get('id')%>">
+
+  <div class="commentor-avatar">
+    <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/836/profile/profile-80_3.jpg" alt="">
+  </div>
+
+
+  <div class="comment-content-container">
+
+    <div class="comment-user">
+      <% var author = CodePron.users.get(comment.get('author_id'))%>
+      <a href="#/users/<%= author.get('id')%>">
+      <%= author.get('email')%></a>
+    </div>
+    <div class="comment-text">
+      <%= comment.get('body')%>
+    </div>
+
+ </div>
+ </li>

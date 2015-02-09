@@ -1,0 +1,79 @@
+<% var preview_id = preview.get('id') %>
+<% var author = CodePron.users.get(preview.get('author_id')) %>
+<% var author_id = preview.get('author_id') %>
+
+<section id="drawer" class="drawer open" style="display: block;">
+
+        <div class="grid group drawer-grid all-details">
+
+  <div class="grid-2-5">
+
+    <div class="group">
+      <header class="details-header">
+        <header class="details-header group">
+
+  <div class="avatar details-avatar">
+    <a href="#/users/<%=author_id %>">
+        <img src="http://www.hta.gov.uk/_db/_images/public_display_image.jpg">
+    </a>
+  </div>
+
+  <div class="details-user">
+    <h1 id="details-title" class="details-title">
+        <%=preview.get('title')%>
+    </h1>
+
+    <div class="details-meta">
+
+      <div class="byline">
+        <span class="line-title">By </span>
+        <a id="username" href="#/users/<%=author_id%>">
+          <%= author.get('email')%>
+        </a>
+
+          <a id="follow-this-user" class="follow thumb">Follow</a>
+
+          <a id="following-this-user" class="following thumb" style="display: none;">
+            Following
+          </a>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+      </header>
+    </div>
+
+
+    <h4>Description</h4>
+
+  <div class="text pen-description" itemprop="about">
+    <%= preview.get('description') %>
+  </div>
+
+<div class="dateline">
+    Created <%= new Date(preview.get('created_at')).toDateString() %>
+  </span>
+
+</div>
+  </div>
+
+
+
+
+  <div class="grid-3-5 comments-col">
+
+    <h4 class="clear">Comments</h4>
+  <ol id="comment-list" class="comments">
+  </ol>
+
+  <div id="comment-form"></div>
+
+
+  </div>
+
+</div>
+
+
+</div></section>
