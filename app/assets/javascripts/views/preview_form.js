@@ -31,7 +31,7 @@ CodePron.Views.PreviewForm = Backbone.View.extend({
       },
 
 
-    })
+    }) 
     };
 
   }

@@ -1,6 +1,8 @@
 <div class='previews-window'>
   <div id='preview-form'>
   </div>
+      <div class="info-popup"></div>
+
     <div class="comment-popup"></div>
   <div id="preview-iframe">
   </div>
@@ -8,7 +10,7 @@
 
 <div class="footer">
   <ul id="foot-left">
-    <li><a href="#/previews/<%= preview.get('id')%>">Info</a></li>
+    <li><a id="info" href="#/previews/<%= preview.get('id')%>">Info</a></li>
     <li><a id="comments" href="#/previews/<%= preview.get('id')%>">Comments</a></li>
 
   </ul>
