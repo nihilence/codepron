@@ -12,10 +12,7 @@ CodePron.Views.IndexItem = Backbone.CompositeView.extend({
     if(this.author){
       var id = this.author.get('id');
       var email = this.author.get('email')
-    }else{
-      var id = "undefined"
-      var email ="undefined"
-   }
+    }
     var link = $('<a class="bars" href="#/users/'+id+'">'+email+'</a>')
     this.$el.append(link)
     return this;

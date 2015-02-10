@@ -1,9 +1,8 @@
 CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
   template:JST['previews/index'],
   initialize: function(){
-    this.collection.fetch();
     this.listenTo(this.collection, "add", this.addIframe);
-
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function(){
