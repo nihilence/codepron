@@ -24,6 +24,7 @@ module Api
 
     def create
       @preview = Preview.new(preview_params)
+      @preview.author_id = current_user.id
       @preview.combined = Preview.build_html(params[:preview][:html], params[:preview][:css],
       params[:preview][:js])
       if @preview.save
