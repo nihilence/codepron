@@ -14,12 +14,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render json: @user
+    render json: @user, include: :previews
   end
 
   def index
     @users = User.all
-    render json: @users, include: :previews
+    render json: @users
   end
 
   private

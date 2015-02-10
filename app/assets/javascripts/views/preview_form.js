@@ -28,7 +28,6 @@ CodePron.Views.PreviewForm = Backbone.View.extend({
     {
       success: function(model){
         CodePron.previews.add(model, {merge: true})
-        CodePron.previews.fetch()
       },
 
 

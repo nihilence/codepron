@@ -13,7 +13,7 @@ CodePron.Routers.Previews = Backbone.Router.extend({
 
   userShow: function(id){
     var user = CodePron.users.getOrFetch(id);
-    var view = new CodePron.Views.UserShow({model: user});
+    var view = new CodePron.Views.UserShow({model: user, collection: user.previews()});
     this._swapView(view);
   },
 

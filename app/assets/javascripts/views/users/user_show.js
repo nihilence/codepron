@@ -2,6 +2,7 @@ CodePron.Views.UserShow = Backbone.CompositeView.extend({
   template: JST['users/show'],
 
   initialize: function(){
+    this.collection = this.model.previews()
     this.listenTo(this.model, "sync", this.render);
   },
 
