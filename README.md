@@ -7,14 +7,14 @@
 ## Minimum Viable Product
 CodeProN is a clone of CodePen built on Rails and Backbone. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create previews
+- [X] Create accounts
+- [X] Create sessions (log in)
+- [X] Create previews
 - [X] Preview HTML/CSS/JS in real time
-- [ ] View index of previews
+- [X] View index of previews
 - [X] View individual previews
 - [ ] Users can follow each other
-- [ ] Users can comment on previews
+- [X] Users can comment on previews
 
 ## Design Docs
 * [View Wireframes][views]

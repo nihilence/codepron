@@ -1,6 +1,15 @@
 <div class='previews-window'>
   <div id='preview-form'>
   </div>
+      <a href="#x" class="overlay" id="m"></a>
+        <div id="modal-box-pop"><a class="close" href="#close"></a>
+
+                    <input type="text">
+          <textarea></textarea>
+          <button class="submit">Submit</button>
+                    </div>
+
+
     <div class="comment-popup"></div>
   <div id="preview-iframe">
   </div>
@@ -8,11 +17,12 @@
 
 <div class="footer">
   <ul id="foot-left">
-    <li><a href="#/previews/<%= preview.get('id')%>">Info</a></li>
+    <li><a id="pop" href="#/previews/<%= preview.get('id')%>">Info</a></li>
     <li><a id="comments" href="#/previews/<%= preview.get('id')%>">Comments</a></li>
 
   </ul>
 
   <ul id="foot-right">
+    <li><%=preview.get('title')%></li>
   </ul>
 <div>
