@@ -94,7 +94,7 @@ textarea{
   border: thin white solid;
   display:inline block;
   height:300px;
-  width:400px;
+  width: 100%;
   font-weight: bold;
   font-size: 14px;
   background: inherit;
@@ -110,11 +110,11 @@ textarea{
 }
 
 #js{
-
   color: orange;
 }
 .code{
   float:left;
+  width: 30%;
 }
 
 body{
@@ -190,6 +190,7 @@ body{
 .submit:active {
   position:relative;
 }
+
 #iframes{
   margin-left:6%;
   margin-top: 50px;
@@ -414,7 +415,7 @@ body{
   border: thin white solid;
 }
 #comment-form textarea{
-  height:100px;
+  height:80px;
   position: relative;
   left: 30px;
   background:lightgray;
@@ -449,7 +450,8 @@ h1,h2,h3,h4{
   font-family: "Lato", Sans-Serif;
   font-weight: 700;
   line-height: .8;
-  margin: 0 0 10px 0;
+  padding-left: 10px;
+  padding: 10px 0px 20px 0px;-top: 10px;
   font-size: 2.0em;
 }
 #username, .comment-user a{
@@ -524,11 +526,10 @@ h1,h2,h3,h4{
 }
 
 #comment-form .submit{
-  width:80;
+  width:auto;
   height:20;
-  margin-bottom: 10px;
-  position: relative;
-  left:70px;
+  float: right;
+  margin-right:45%;
 }
 
 .dateline{

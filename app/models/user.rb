@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_reader :password
   has_many :previews, foreign_key: "author_id", class_name:"Preview"
   has_many :comments, foreign_key: "author_id", class_name:"Comment"
+  has_many :followers, foreign_key: "followed_id", class_name: "User"
+  has_many :followed_users, foreign_key: "follower_id", class_name: "User"
 
   after_initialize :ensure_session_token
   validate :email, presence: true
