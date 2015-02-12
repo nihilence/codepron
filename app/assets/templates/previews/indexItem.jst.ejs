@@ -1,6 +1,6 @@
 <a href="#/previews/<%= preview.get('id')%>" class="cover-link"></a>
 <iframe class="iframe" scrolling="no" allowtransparency="true"
-  frameborder="0" data-id="<%= preview.get('id')%>"src="/htmldocs/<%=preview.escape('id')%>">
+  frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts"data-id="<%= preview.get('id')%>"src="/htmldocs/<%=preview.escape('id')%>">
 </iframe>
 <div class="meta-overlay">
   <h3><%= preview.get('title')%></h3>

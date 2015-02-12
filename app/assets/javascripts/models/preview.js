@@ -2,7 +2,9 @@ CodePron.Models.Preview = Backbone.Model.extend({
   urlRoot:'/api/previews',
 
   defaults:{
-    html:"<p></p>",
+    html:"<!-- Press backslash to update --><p></p>",
+    css:"/* Press backslash to update */",
+    js:"// Press blackslash to update",
     title: "A new project"
   },
 
