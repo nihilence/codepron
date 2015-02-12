@@ -12,6 +12,7 @@
 }
 
 .users-form h1{
+  padding-top: 10px;
   font-size: 30px;
   margin-bottom: 10px;
 }
@@ -22,6 +23,10 @@ input[type="text"],{
   background: #CCC;
   box-sizing:border-box;
   color:#000;
+}
+
+button{
+  cursor: pointer;
 }
 
 input[type="password"]:focus,
@@ -90,8 +95,9 @@ button{
   text-shadow: 1px 1px 3px #666666;
   color: #000;
   font-size: 15px;
-  padding: 10px 20px 10px 20px;
+  padding: 8px 16px 8px 16  px;
   text-decoration: none;
+  border: none;
 }
 
 .follow:hover {

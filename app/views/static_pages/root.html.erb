@@ -1,7 +1,9 @@
-<html>
-  <body>
     <div id="main-content" class="col-xs-9">
-      <!--  main content -->
+
     </div>
-  </body>
-</html>
+<script>
+  currentUser = <%= current_user.id if current_user%>
+  $(document).ready(function(){
+    CodePron.initialize();
+  });
+</script>

@@ -12,16 +12,6 @@ class UsersController < ApplicationController
     redirect_to ''
   end
 
-  def show
-    @user = User.find(params[:id])
-    render json: @user, include: :previews
-  end
-
-  def index
-    @users = User.all
-    render json: @users
-  end
-
   private
 
     def user_params

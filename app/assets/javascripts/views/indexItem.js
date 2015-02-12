@@ -19,11 +19,11 @@ CodePron.Views.IndexItem = Backbone.CompositeView.extend({
   },
 
 
-  renderBars: function(){
-    var bar = new CodePron.Views.IndexItemBar({
-      model: this.model
-    });
-    this.addSubview('#index-bar-'+ this.model.get('id'), bar);
-  }
+  // renderBars: function(){
+  //   var bar = new CodePron.Views.IndexItemBar({
+  //     model: this.model
+  //   });
+  //   this.addSubview('#index-bar-'+ this.model.get('id'), bar);
+  // }
 
 })

@@ -1,6 +1,6 @@
 CodePron.Collections.Users = Backbone.Collection.extend({
   model: CodePron.Models.User,
-  url: '/users',
+  url: '/api/users',
 
   getOrFetch: function(id){
     var model = this.get(id);

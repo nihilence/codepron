@@ -1,5 +1,5 @@
 <div id="display-img">
-  <img src="http://www.hta.gov.uk/_db/_images/public_display_image.jpg">
+  <img src="http://static.giantbomb.com/uploads/original/4/42381/1196379-gas_mask_respirator.jpg">
 </div>
 <div id="name-follows">
     <h1><%= user.get('email')%></h1>
@@ -7,7 +7,17 @@
       <li><a href="#/users/<%= user.get('id')%>">Link1</a></li>
       <li><a href="#/users/<%= user.get('id')%>">Link2</a></li>
       <li><a href="#/users/<%= user.get('id')%>">Link3</a></li>
-      <li>## <a href="#/users/<%= user.get('id')%>">Followers</a>    ## <a href="#/users/<%= user.get('id')%>">Following</a>
-      <button class="follow">Follow<button></li>
+      <li><%= user.followers().length %> <a href="#/users/<%= user.get('id')%>">Followers</a>
+          <%= user.followedUsers().length %> <a href="#/users/<%= user.get('id')%>">Following</a>
+
+      <% if(currentUser != user.get('id') && typeof currentUser === "number") {%>
+        <button class="follow">  <% var is_followed = user.get('is_followed')%>
+        <%if(is_followed === true){%>
+          Unfollow
+        <% }else {%>
+           Follow
+          <%}%>
+        </button></li>
+      <% }%>
   </ul>
 </div>

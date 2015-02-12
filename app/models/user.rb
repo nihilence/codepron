@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
   attr_reader :password
   has_many :previews, foreign_key: "author_id", class_name:"Preview"
   has_many :comments, foreign_key: "author_id", class_name:"Comment"
-  has_many :followers, foreign_key: "followed_id", class_name: "User"
-  has_many :followed_users, foreign_key: "follower_id", class_name: "User"
+
+  has_many :out_follows, class_name: :Follow, foreign_key: :follower_id
+  has_many :in_follows, class_name: :Follow, foreign_key: :followed_id
+
+  has_many :followers, through: :in_follows, source: :follower
+  has_many :followed_users, through: :out_follows, source: :followed
 
   after_initialize :ensure_session_token
   validate :email, presence: true
@@ -36,6 +40,10 @@ class User < ActiveRecord::Base
     else
       return nil
     end
+  end
+
+  def follows?(user)
+    user.followers.include?(self)
   end
 
 

@@ -3,9 +3,9 @@ CodePron.Collections.Comments = Backbone.Collection.extend({
     this.preview = options.preview
   },
 
-  url: function(){
-    return this.preview.url()+'/comments';
-  },
+  // url: function(){
+  //   return this.preview.url()+'/comments';
+  // },
 
   getOrFetch: function(id){
     var comment = this.get(id);

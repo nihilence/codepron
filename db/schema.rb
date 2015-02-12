@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150210145910) do
   end
 
   add_index "follows", ["followed_id"], name: "index_follows_on_followed_id", using: :btree
+  add_index "follows", ["follower_id", "followed_id"], name: "index_follows_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "follows", ["follower_id"], name: "index_follows_on_follower_id", using: :btree
 
   create_table "previews", force: true do |t|
