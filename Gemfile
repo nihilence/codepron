@@ -17,6 +17,7 @@ gem 'nokogiri'
 gem 'codemirror-rails'
 gem 'autoprefixer-rails'
 gem 'newrelic_rpm'
+gem 'kaminari'
 
 group :doc do
   gem 'sdoc', require: false

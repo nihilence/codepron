@@ -6,6 +6,11 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
     this.renderIframes();
   },
 
+  events: {
+    "click .next-page" : "nextPage",
+    "click .prev-page" : "prevPage"
+  },
+
   render: function(){
     var content = this.template();
     this.$el.html(content);
@@ -21,7 +26,40 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
     $('iframe').addClass('small');
   },
 
+  removeIframes: function(){
+    var view = this;
+    this.subviews('#iframes').forEach(function(subview){
+      view.removeSubview('#iframes', subview);
+    });
+
+  },
+
   renderIframes: function(){
     this.collection.each(this.addIframe.bind(this));
+  },
+
+
+  nextPage: function () {
+    this.removeIframes();
+    this.removeIframes();
+    this.removeIframes();
+    this.collection.fetch({
+      data: { page: this.collection.page_number + 1 },
+      remove: true
+    })
+
+  },
+
+  prevPage: function(){
+    this.removeIframes();
+    this.removeIframes();
+    this.removeIframes();
+    this.collection.fetch({
+      data: { page: this.collection.page_number - 1 },
+      remove: true
+    })
+
   }
+
+
 });

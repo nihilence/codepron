@@ -9,10 +9,8 @@ window.CodePron = {
     CodePron.users.fetch();
 
     CodePron.previews = new CodePron.Collections.Previews();
-    CodePron.previews.fetch();
+    CodePron.previews.fetch( {data: { page:1 } });
 
-    // CodePron.follows = new CodePron.Collections.Follows();
-    // CodePron.follows.fetch();
     new CodePron.Routers.Previews({$rootEl: $("#main-content")});
 
     Backbone.history.start();

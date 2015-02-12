@@ -54,3 +54,21 @@ textarea#pen-details-description:focus{
   margin-top:10px;
 
 }
+
+.next-page, .prev-page{
+  font-weight: 900;
+  background:#2e2e2e;
+  color: white;
+}
+
+.next-page{
+  position: absolute;
+  top: 60%;
+  right: 50%;
+}
+
+.prev-page{
+  position: absolute;
+  top: 60%;
+  right: 55%;
+}
