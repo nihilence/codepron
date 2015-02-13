@@ -7,12 +7,8 @@ module Api
     end
 
     def index
-      @previews = Preview.page(params[:page]).per(6)
-      render :json => {
-        models: @previews,
-        page_number: params[:page],
-        total_pages: @previews.total_pages
-      }
+      @previews = Preview.all
+      render json: @previews
     end
 
     def update
