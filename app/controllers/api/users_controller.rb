@@ -5,13 +5,15 @@ module Api
       @previews = @user.previews
       @previews.page(params[:page]).per(6)
       render :json => {
-        user: @user, only: [:id, :email],
+        user: @user,
         previews: { models: @previews,
                     page_number: nil,
                     total_pages: 1
         },
         followers: @user.followers,
-        followed_users: @user.followed_users
+        followed_users: @user.followed_users,
+        follows: @user.in_follows,
+        is_followed: current_user.follows?(@user)
       }
     end
 
