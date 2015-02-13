@@ -244,11 +244,10 @@ body{
   float: left;
   margin: 10px;
   height: 150px;
-  width: 30%;
+  width: 29%;
   top:-10px;
   left:-10px;
   overflow: hidden;
-  // white-space : nowrap
 }
 
 
@@ -286,7 +285,6 @@ body{
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-radius: 5px;
-  z-index:4;
 }
 
 .header-list > li:hover > .user-options,
@@ -298,6 +296,7 @@ body{
   width: 100%;
   height: 100%;
 }
+
 .user-options > li {
   position: relative;
   display: block;
