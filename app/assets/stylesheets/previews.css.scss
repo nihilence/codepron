@@ -235,6 +235,7 @@ body{
 #iframes{
   // position: relative;
   margin-left:6%;
+  margin-right: 5%;
   margin-top: 50px;
 }
 
@@ -244,10 +245,15 @@ body{
   float: left;
   margin: 10px;
   height: 150px;
-  width: 29%;
+  width: 30%;
   top:-10px;
   left:-10px;
   overflow: hidden;
+}
+
+.iframe.small{
+  position: relative;
+  top:-60%;
 }
 
 
