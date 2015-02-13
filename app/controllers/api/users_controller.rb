@@ -1,6 +1,7 @@
 module Api
   class UsersController < ApiController
     def show
+      curr = current_user.nil? ?  User.new() : current_user
       @user = User.find(params[:id])
       @previews = @user.previews
       @previews.page(params[:page]).per(6)
@@ -13,7 +14,7 @@ module Api
         followers: @user.followers,
         followed_users: @user.followed_users,
         follows: @user.in_follows,
-        is_followed: current_user.follows?(@user)
+        is_followed: curr.follows?(@user)
       }
     end
 
