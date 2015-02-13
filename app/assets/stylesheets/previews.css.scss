@@ -233,7 +233,7 @@ body{
 }
 
 #iframes{
-  position: relative;
+  // position: relative;
   margin-left:6%;
   margin-top: 50px;
 }
@@ -248,7 +248,7 @@ body{
   top:-10px;
   left:-10px;
   overflow: hidden;
-  white-space: nowrap
+  // white-space : nowrap
 }
 
 
@@ -286,6 +286,7 @@ body{
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-radius: 5px;
+  z-index:4;
 }
 
 .header-list > li:hover > .user-options,
