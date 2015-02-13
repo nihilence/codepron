@@ -10,6 +10,12 @@ CodePron.Views.PreviewsIndex = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    if(this.collection.page_number === 1){
+      $('.prev-page').remove();
+    }
+    if(this.collection.page_number === this.collection.total_pages){
+      $('.next-page').remove();
+    }
     return this;
   },
 

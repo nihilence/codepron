@@ -13,6 +13,7 @@ CodePron.Views.UserShow = Backbone.CompositeView.extend({
     this.userInfoView = new CodePron.Views.UserInfo({
       model: this.model
     });
+
   },
   toggleFollow: function(event){
     event.preventDefault();
@@ -28,6 +29,8 @@ CodePron.Views.UserShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.$('#info-tab').html(this.userInfoView.render().$el);
     this.renderIframes();
+    $('.prev-page').remove()
+    $('.next-page').remove()
     return this;
   },
 
@@ -37,12 +40,6 @@ CodePron.Views.UserShow = Backbone.CompositeView.extend({
   },
 
 
-    unfollowUser: function(){
-      var currUserModel = CodePron.users.get(currentUser);
-      debugger;
-      // var follow = this.followers.where({follower_id: currUserModel.id})
-  
-    }
 
 
 
