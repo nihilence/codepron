@@ -7,6 +7,7 @@ end
 json.followers @user.followers do |follower|
   json.extract! follower, :id, :email
 end
+
 json.followed_users @user.followed_users do |followed|
   json.extract! followed, :id, :email
 end
