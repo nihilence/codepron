@@ -20,5 +20,10 @@ CodePron.Collections.Previews = Backbone.Collection.extend({
     return model;
   },
 
+  parse: function(response) {
+    this.page_number = parseInt(response.page_number);
+    this.total_pages = parseInt(response.total_pages);
+    return response.models;
+  },
 
 })
