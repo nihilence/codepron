@@ -41,7 +41,7 @@ thumbnail of the preview window and the title. The create button should make
 a new code preview in the database and direct to the show page. The author_id
 in the previews table can be blank so anonymous users can generate code
 previews.The Nav bar will have a button to sign in/sign up, logo links home,
-display the user's profile and search previews bar.
+display the user's profile.
 
 [Details][phase-two]
 
@@ -68,16 +68,16 @@ will require a follow model and controller. The button on the user show
 page will show Unfollow if a user is already followed and Follow if not. The
 button will work with AJAX requests to render the change while the request to
 the server is sent in the background. When clicked, followers or followed users
-will appear on user show page. Reactive preview search will also be implemented.
+will appear on user show page.
 
 [Details][phase-five]
 
 ### Bonus Features (TBD)
 - [ ] Fork option
 - [ ] Option for JS library inclusion
-- [ ] Tagging, search by tag
+- [ ] Tagging, search by tag/title/artist
 - [ ] 'Heart' button and counter for `PreviewShow` view
-- [ ] Pagination of previews index
+- [X] Pagination of previews index
 - [ ] Buttons to change position of textareas and preview
 - [ ] Hotkey map and bindings
 - [ ] Blogs
