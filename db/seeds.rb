@@ -19,7 +19,7 @@ var oy1;
 var oz1;
 var exx = 0;
 var eyy = 0;
-var click1 = 0;
+var click1 = 0; 
 
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
