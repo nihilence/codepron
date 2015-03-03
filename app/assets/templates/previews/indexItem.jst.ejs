@@ -1,8 +1,8 @@
-<a href="#/previews/<%= preview.get('id')%>" class="cover-link"></a>
+<a href="#/previews/<%= preview.escape('id')%>" class="cover-link"></a>
 <iframe class="iframe" scrolling="no" allowtransparency="true"
-  frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts"data-id="<%= preview.get('id')%>"src="/htmldocs/<%=preview.escape('id')%>">
+  frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts"data-id="<%= preview.escape('id')%>"src="/htmldocs/<%=preview.escape('id')%>">
 </iframe>
 <div class="meta-overlay">
-  <h3><%= preview.get('title')%></h3>
-  <h5><%= preview.get('description')%></h5>
+  <h3><%= preview.escape('title')%></h3>
+  <h5><%= preview.escape('description')%></h5>
 </div>

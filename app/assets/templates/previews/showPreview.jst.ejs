@@ -11,12 +11,12 @@
 <div class="footer">
   <ul id="foot-left">
 
-    <li><a id="info" href="#/previews/<%= preview.get('id')%>">Info</a></li>
-    <li><a id="comments" href="#/previews/<%= preview.get('id')%>">Comments</a></li>
+    <li><a id="info" href="#/previews/<%= preview.escape('id')%>">Info</a></li>
+    <li><a id="comments" href="#/previews/<%= preview.escape('id')%>">Comments</a></li>
 
   </ul>
 
   <ul id="foot-right">
-    <li><%=preview.get('title')%></li>
+    <li><%=preview.escape('title')%></li>
   </ul>
 <div>

@@ -1,11 +1,11 @@
 <div id="info-tab">
 </div>
   <ul class="user-projects-view">
-    <li><a href="#/users/<%= user.get('id')%>">Showcase</a></li>
-    <li><a href="#/users/<%= user.get('id')%>">Popular</a></li>
-    <li><a href="#/users/<%= user.get('id')%>">Public</a></li>
-    <li><a href="#/users/<%= user.get('id')%>">Forked</a></li>
-    <li><a href="#/users/<%= user.get('id')%>">Loved</a></li>
+    <li><a href="#/users/<%= user.escape('id')%>">Showcase</a></li>
+    <li><a href="#/users/<%= user.escape('id')%>">Popular</a></li>
+    <li><a href="#/users/<%= user.escape('id')%>">Public</a></li>
+    <li><a href="#/users/<%= user.escape('id')%>">Forked</a></li>
+    <li><a href="#/users/<%= user.escape('id')%>">Loved</a></li>
   </ul>
 <div id="previews-tab">
 

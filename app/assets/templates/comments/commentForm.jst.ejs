@@ -1,5 +1,6 @@
+<% if(typeof currentUser === "number"){ %>
 <h4> LEAVE A COMMENT</h4>
-<form action="/api/previews/<%= preview.get('id')%>/comments">
+<form action="/api/previews/<%= preview.escape('id')%>/comments">
   <textarea name="body" id="comment-body">Tell it!</textarea>
     <div class="submit-area">
         <button id="submit" class="submit" id="comment-save">
@@ -8,3 +9,5 @@
       </div>
 
 </form>
+
+<% } %>

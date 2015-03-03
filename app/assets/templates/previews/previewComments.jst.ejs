@@ -1,6 +1,6 @@
-<% var preview_id = preview.get('id') %>
-<% var author = CodePron.users.get(preview.get('author_id')) %>
-<% var author_id = preview.get('author_id') %>
+<% var preview_id = preview.escape('id') %>
+<% var author = CodePron.users.get(preview.escape('author_id')) %>
+<% var author_id = preview.escape('author_id') %>
 
 <section id="drawer" class="drawer open" style="display: block;">
 
@@ -20,7 +20,7 @@
 
   <div class="details-user">
     <h1 id="details-title" class="details-title">
-        <%=preview.get('title')%>
+        <%=preview.escape('title')%>
     </h1>
 
     <div class="details-meta">
@@ -28,7 +28,7 @@
       <div class="byline">
         <span class="line-title">By </span>
         <a id="username" href="#/users/<%=author_id%>">
-          <%= author.get('email')%>
+          <%= author.escape('email')%>
         </a>
 
           <a id="follow-this-user" class="follow thumb">Follow</a>
@@ -49,11 +49,11 @@
     <h4>Description</h4>
 
   <div class="text pen-description" itemprop="about">
-    <%= preview.get('description') %>
+    <%= preview.escape('description') %>
   </div>
 
 <div class="dateline">
-    Created <%= new Date(preview.get('created_at')).toDateString() %>
+    Created <%= new Date(preview.escape('created_at')).toDateString() %>
   </span>
 
 </div>

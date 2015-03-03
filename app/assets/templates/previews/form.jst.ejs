@@ -1,15 +1,15 @@
 <form class="form clearfix">
      <div class="code">
         <label>HTML</label>
-          <textarea id="html"><%= preview.get('html')%></textarea>
+          <textarea id="html"><%= preview.escape('html')%></textarea>
     </div>
      <div class="code">
        <label>CSS</label>
        <textarea id="css">
-        <%= preview.get('css')%></textarea>
+        <%= preview.escape('css')%></textarea>
      </div>
       <div class="code">
          <label>Javascript</label>
-         <textarea id="js"><%= preview.get('js')%></textarea>
+         <textarea id="js"><%= preview.escape('js')%></textarea>
       </div>
 </form>
