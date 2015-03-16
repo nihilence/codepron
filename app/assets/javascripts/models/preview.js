@@ -3,7 +3,7 @@ CodePron.Models.Preview = Backbone.Model.extend({
 
   defaults:{
     html:"<!-- Press backslash to update --><p></p>",
-    css:"/* Press backslash to update */",
+    css:"/* Press backslash to update */ \n body{\n color:white \n}",
     js:"// Press blackslash to update",
     title: "A new project"
   },
