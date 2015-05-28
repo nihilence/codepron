@@ -1,6 +1,6 @@
 # CodeProN - Code Previews on Rails!
 
-[Heroku link][heroku]
+[Check it out!][heroku]
 
 [heroku]: http://codepron.herokuapp.com
 
